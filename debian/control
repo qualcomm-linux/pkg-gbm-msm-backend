@@ -1,0 +1,40 @@
+Source:  libgbm-msm
+Section: libs
+Priority: optional
+Maintainer: ABHIJITH DESAI <quic_abdesai@quicinc.com>
+Uploaders: DEVANSHI BANSAL <quic_devanshi@quicinc.com>,
+Build-Depends:
+ debhelper-compat (= 13),
+ libdrm-dev (>= 2.4.104),
+ libgbm-dev (>= 21.2),
+ meson (>= 1.3.0),
+ libxml2-dev,
+ pkgconf,
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: libgbm-msm
+Section: libs
+Architecture: arm64
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Pre-Depends: ${misc:Pre-Depends}
+Replaces: libgbm-msm1
+Conflicts: libgbm-msm1
+Provides: libgbm-msm1 (= 1.2.2)
+Description: generic buffer management API -- runtime
+ This package provides the MSM backend library which enables GBM buffer
+ management support when using Qualcomm graphics driver.
+
+Package: libgbm-msm-dev
+Section: libdevel
+Architecture: arm64
+Depends:
+ ${misc:Depends},
+Replaces: libgbm-msm1-dev
+Conflicts: libgbm-msm1-dev
+Provides: libgbm-msm1-dev (= 1.2.2)
+Description: generic buffer management API -- runtime
+ This package provides the MSM backend library which enables GBM buffer
+ management support when using Qualcomm graphics driver.

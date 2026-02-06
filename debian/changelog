@@ -1,0 +1,50 @@
+libgbm-msm (1.2.5) noble; urgency=medium
+
+  * Fix: gbm: Updated FLOAT32 FORMAT to use standard FourCC
+
+ -- Yash Gupta <quic_ygupt@quicinc.com>  Thu, 29 Jan 2026 06:23:11 +0530
+
+libgbm-msm (1.2.4) noble; urgency=medium
+
+  * Updated control file to improve package update transitions and
+    maintain backward compatibility.
+
+ -- Abhijith Desai <abdesai@qti.qualcomm.com>  Fri, 19 Dec 2025 15:54:24 +0530
+
+libgbm-msm (1.2.3) noble; urgency=medium
+
+  * Updated package rules and dependencies to conform with community
+    guidelines. Updated package name to libgbm-msm.
+  * Fix : Fix the modifier handling and bpp for float32 format.
+
+ -- Abhijith Desai <quic_abdesai@quicinc.com>  Thu, 06 Nov 2025 12:41:04 +0530
+
+libgbm-msm1 (1.2.2) noble; urgency=medium
+
+  * Updated backend initialization logic: backend is now created only if an Adreno GPU is present
+
+ -- Devanshi Bansal <quic_devanshi@quicinc.com>  Tue, 09 Sep 2025 15:18:57 +0530
+
+libgbm-msm1 (1.2.1) noble; urgency=medium
+
+  * Fix: updated patch to handle bo create without modifier.
+
+ -- Yash Gupta <quic_ygupt@quicinc.com>  Mon, 25 Aug 2025 23:30:00 -0700
+
+libgbm-msm1 (1.2.0) noble; urgency=medium
+
+  * New release with bug fixes and gpu dri3 support
+
+ -- Abhijith Desai <quic_abdesai@quicinc.com>  Wed, 20 Aug 2025 15:31:17 +0530
+
+libgbm-msm1 (1.1.0) noble; urgency=medium
+
+  * New release with bug fixes
+
+ -- Abhijith Desai <quic_abdesai@quicinc.com>  Wed, 07 May 2025 06:31:12 +0000
+
+libgbm-msm1 (1.0.0) noble; urgency=low
+
+  * Initial release.
+
+ -- Abhijith Desai <quic_abdesai@quicinc.com>  Wed, 05 Feb 2025 10:32:03 +0000
