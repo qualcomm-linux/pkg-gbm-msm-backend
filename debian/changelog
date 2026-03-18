@@ -1,3 +1,9 @@
+libgbm-msm (1.2.6-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Wed, 18 Mar 2026 17:21:26 +0000
+
 libgbm-msm (1.2.5) noble; urgency=medium
 
   * Fix: gbm: Updated FLOAT32 FORMAT to use standard FourCC
