@@ -12,6 +12,12 @@ on:
         required: true
         default: debian/qcom-next
 
+      upstream-ref:
+        description: The upstream ref to use for source code. For example "main" or a specific tag
+        type: string
+        required: true
+        default: main
+
       distro-codename:
         description: The distribution codename to build for. Ex noble, questing, etc
         type: choice
@@ -38,10 +44,55 @@ on:
           - lecore-prd-u2404-arm64-xlrg-od-ephem
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
+  prepare-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Debian Packaging Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.debian-ref }}
+          token: ${{ secrets.DEB_PKG_BOT_CI_TOKEN }}
+          path: ./pkg-repo
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Checkout Upstream Source Repository
+        uses: actions/checkout@v4
+        with:
+          repository: qualcomm-linux/gbm-msm-backend
+          ref: ${{ inputs.upstream-ref }}
+          token: ${{ secrets.DEB_PKG_BOT_CI_TOKEN }}
+          path: ./upstream-source
+          fetch-depth: 0
+
+      - name: Merge Upstream Source into Package Repository
+        run: |
+          cd pkg-repo
+
+          # Configure git
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+
+          # Copy upstream source files into the package repo
+          # Exclude .git directory and .github directory from upstream
+          rsync -av --exclude='.git' --exclude='.github' ../upstream-source/ ./
+
+          # Add all changes
+          git add -A
+
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit - source already up to date"
+          else
+            git commit -m "Merge upstream source from ${{ inputs.upstream-ref }}"
+            git push origin ${{ inputs.debian-ref }}
+          fi
+
   build:
+    needs: prepare-and-build
     uses: qualcomm-linux/qcom-build-utils/.github/workflows/qcom-build-pkg-reusable-workflow.yml@main
     with:
       qcom-build-utils-ref: main
@@ -49,6 +100,4 @@ jobs:
       distro-codename: ${{ inputs.distro-codename }}
       run-abi-checker: ${{ inputs.abi-checker }}
       is-post-merge: ${{ inputs.push-to-repo }}
-      runner: ${{inputs.builder_runner}}
-    secrets:
-      TOKEN: ${{ secrets.DEB_PKG_BOT_CI_TOKEN }}
+    secrets: inherit
