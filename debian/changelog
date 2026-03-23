@@ -1,8 +1,8 @@
-libgbm-msm (1.2.5-1) UNRELEASED; urgency=medium
+libgbm-msm (1.2.5-1) unstable; urgency=medium
 
   * New upstream release
 
- -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Mon, 23 Mar 2026 11:23:28 +0000
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Mon, 23 Mar 2026 11:40:16 +0000
 
 libgbm-msm (1.2.5) noble; urgency=medium
 
