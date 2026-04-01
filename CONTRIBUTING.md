@@ -1,4 +1,4 @@
-# Contributing to <REPLACE-ME>
+# Contributing to Packaging repository for gbm-msm-backend
 
 Hi there!
 We’re thrilled that you’d like to contribute to this project.
@@ -11,10 +11,10 @@ Development happens directly on branch main. Open a PR targeting main
 ## Submitting a pull request
 
 1. Please read our [code of conduct](CODE-OF-CONDUCT.md) and [license](LICENSE.txt).
-1. [Fork](https://github.com/qualcomm-linux/pkg-template/fork) and clone the repository.
+1. [Fork](https://github.com/qualcomm-linux/pkg-gbm-msm-backend/fork) and clone the repository.
 
     ```bash
-    git clone https://github.com/qualcomm-linux/pkg-template.git
+    git clone https://github.com/qualcomm-linux/pkg-gbm-msm-backend.git
     ```
 
 1. Create a new branch based on `main`:
@@ -26,7 +26,7 @@ Development happens directly on branch main. Open a PR targeting main
 1. Create an upstream `remote` to make it easier to keep your branches up-to-date:
 
     ```bash
-    git remote add upstream https://github.com/qualcomm/<REPLACE-ME>.git
+    git remote add upstream https://github.com/qualcomm/pkg-gbm-msm-backend.git
     ```
 
 1. Make your changes, add tests, and make sure the tests still pass.
@@ -50,7 +50,7 @@ Development happens directly on branch main. Open a PR targeting main
 
     The `-u` is shorthand for `--set-upstream`. This will set up the tracking reference so subsequent runs of `git push` or `git pull` can omit the remote and branch.
 
-1. [Submit a pull request](https://github.com/qualcomm/<REPLACE-ME>/pulls) from your branch to `main`.
+1. [Submit a pull request](https://github.com/qualcomm/pkg-gbm-msm-backend/pulls) from your branch to `main`.
 1. Pat yourself on the back and wait for your pull request to be reviewed.
 
 ## Security Analysis of Pull Requests
