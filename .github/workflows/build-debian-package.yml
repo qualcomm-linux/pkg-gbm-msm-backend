@@ -28,11 +28,6 @@ on:
         type: boolean
         default: false
 
-      push-to-repo:
-        description: Push to repository upon successful build
-        type: boolean
-        default: false
-
 permissions:
   contents: read
 
@@ -44,5 +39,4 @@ jobs:
       debian-ref: ${{ inputs.debian-ref }}
       distro-codename: ${{ inputs.distro-codename }}
       run-abi-checker: ${{ inputs.abi-checker }}
-      is-post-merge: ${{ inputs.push-to-repo }}
     secrets: inherit
