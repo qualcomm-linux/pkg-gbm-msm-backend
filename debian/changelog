@@ -1,8 +1,9 @@
-libgbm-msm (1.2.5-4) UNRELEASED; urgency=medium
+libgbm-msm (1.2.5-4) unstable; urgency=medium
 
+  [ ABHIJITH DESAI ]
   * Initial commit
 
- -- ABHIJITH DESAI <quic_abdesai@quicinc.com>  Mon, 13 Apr 2026 10:28:54 +0000
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Mon, 13 Apr 2026 10:35:16 +0000
 
 libgbm-msm (1.2.5-3) unstable; urgency=medium
 
