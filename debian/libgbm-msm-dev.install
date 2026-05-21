@@ -1,2 +1,1 @@
-src/*.h usr/include/
-external/*.h usr/include/
+src/gbm_msm.h usr/include/

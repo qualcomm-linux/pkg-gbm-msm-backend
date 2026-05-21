@@ -1,8 +1,9 @@
-libgbm-msm (1.2.5-5) UNRELEASED; urgency=medium
+libgbm-msm (1.2.6) resolute; urgency=medium
 
-  * Initial commit
+  * Updated install rules for dev package to limit header export
+    to required headers.
 
- -- ABHIJITH DESAI <quic_abdesai@quicinc.com>  Mon, 13 Apr 2026 10:36:12 +0000
+ -- Abhijith Desai <abdesai@qti.qualcomm.com>  Thu, 21 May 2026 04:40:04 +0530
 
 libgbm-msm (1.2.5-4) unstable; urgency=medium
 
