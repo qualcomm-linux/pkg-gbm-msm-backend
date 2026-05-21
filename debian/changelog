@@ -1,4 +1,4 @@
-libgbm-msm (1.2.6) resolute; urgency=medium
+libgbm-msm (1.2.6-1) resolute; urgency=medium
 
   * Updated install rules for dev package to limit header export
     to required headers.
