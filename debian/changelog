@@ -1,3 +1,9 @@
+libgbm-msm (1.2.5-6) UNRELEASED; urgency=medium
+
+  * Initial commit
+
+ -- ABHIJITH DESAI <quic_abdesai@quicinc.com>  Thu, 21 May 2026 12:30:40 +0000
+
 libgbm-msm (1.2.5-5) unstable; urgency=medium
 
   [ Abhijith Desai ]
