@@ -8,7 +8,7 @@ libgbm-msm (1.2.6-2) resolute; urgency=medium
 
 libgbm-msm (1.2.6-2~) UNRELEASED; urgency=medium
 
-  * WIP — update changelog before next release
+  * Axiom test for ubuntu
 
  -- ABHIJITH DESAI <quic_abdesai@quicinc.com>  Wed, 03 Jun 2026 11:28:35 +0000
 
