@@ -22,7 +22,7 @@ src = [
     'schema_parser.h',
 ]
 
-msm_gbm = library('msm_gbm',
+msm_gbm = shared_module('msm_gbm',
     src,
     dependencies : [
         gbm,
@@ -31,8 +31,8 @@ msm_gbm = library('msm_gbm',
         libdl,
     ],
     include_directories : ext_includes,
-    version : meson.project_version(),
     install : true,
+    install_dir: libdir / 'gbm',
     name_prefix: '',
     c_args: c_args,
 )

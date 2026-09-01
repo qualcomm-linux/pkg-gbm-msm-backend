@@ -1,0 +1,5 @@
+# Exclude external directory from license checks
+external/**
+
+# Exclude GitHub workflows directory from license checks
+.github/workflows/**
