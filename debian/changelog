@@ -1,12 +1,9 @@
 gbm-msm-backend (1.2.6-0qli1~) UNRELEASED; urgency=medium
 
-  [ Debusine Action GitHub Bot ]
-  * Unreleased changes
-
-  [ GitHub Service Bot ]
   * New upstream release
+    - Drop upstream patch shared-module, included in this release.
 
- -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Tue, 01 Sep 2026 13:09:27 +0000
+ -- Abhijith Desai <abdesai@qti.qualcomm.com>  Tue, 08 Sep 2026 13:21:21 +0200
 
 gbm-msm-backend (1.2.5-0qli2) forky; urgency=medium
 
