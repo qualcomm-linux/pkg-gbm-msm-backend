@@ -1,8 +1,9 @@
-gbm-msm-backend (1.2.6-0qli1~bpo13+1) UNRELEASED; urgency=medium
+gbm-msm-backend (1.2.6-0qli1~bpo13+1) trixie; urgency=medium
 
+  [ Loïc Minier ]
   * Rebuild for trixie-backports.
 
- -- Loïc Minier <loic.minier@oss.qualcomm.com>  Tue, 08 Sep 2026 11:41:21 +0000
+ -- Debusine Action Bot <noreply@bot.invalid>  Tue, 08 Sep 2026 11:43:10 +0000
 
 gbm-msm-backend (1.2.6-0qli1) forky; urgency=medium
 
