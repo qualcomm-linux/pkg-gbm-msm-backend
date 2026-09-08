@@ -1,3 +1,9 @@
+gbm-msm-backend (1.2.6-0qli1~bpo13+2~) UNRELEASED; urgency=medium
+
+  * Unreleased changes
+
+ -- Debusine Action Bot <noreply@bot.invalid>  Tue, 08 Sep 2026 12:22:17 +0000
+
 gbm-msm-backend (1.2.6-0qli1~bpo13+1) trixie; urgency=medium
 
   [ Loïc Minier ]
