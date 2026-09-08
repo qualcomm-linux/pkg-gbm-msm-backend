@@ -1,8 +1,12 @@
-gbm-msm-backend (1.2.5-0qli3~) UNRELEASED; urgency=medium
+gbm-msm-backend (1.2.6-0qli1~) UNRELEASED; urgency=medium
 
+  [ Debusine Action GitHub Bot ]
   * Unreleased changes
 
- -- Debusine Action GitHub Bot <noreply@bot.invalid>  Tue, 28 Jul 2026 12:42:54 +0000
+  [ GitHub Service Bot ]
+  * New upstream release
+
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Tue, 01 Sep 2026 13:09:27 +0000
 
 gbm-msm-backend (1.2.5-0qli2) forky; urgency=medium
 
