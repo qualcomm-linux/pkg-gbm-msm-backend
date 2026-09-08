@@ -1,9 +1,10 @@
-gbm-msm-backend (1.2.6-0qli1~) UNRELEASED; urgency=medium
+gbm-msm-backend (1.2.6-0qli1) forky; urgency=medium
 
+  [ Abhijith Desai ]
   * New upstream release
     - Drop upstream patch shared-module, included in this release.
 
- -- Abhijith Desai <abdesai@qti.qualcomm.com>  Tue, 08 Sep 2026 13:21:21 +0200
+ -- Debusine Action Bot <noreply@bot.invalid>  Tue, 08 Sep 2026 11:25:05 +0000
 
 gbm-msm-backend (1.2.5-0qli2) forky; urgency=medium
 
