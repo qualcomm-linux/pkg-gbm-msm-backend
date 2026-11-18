@@ -36,3 +36,9 @@ msm_gbm = shared_module('msm_gbm',
     name_prefix: '',
     c_args: c_args,
 )
+
+install_symlink(
+    'msm-kms_gbm.so',
+    install_dir: gbmbackendspath,
+    pointing_to: 'msm_gbm.so',
+)
