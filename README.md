@@ -75,9 +75,9 @@ See [MAINTAINERS.md](MAINTAINERS.md) for more information.
 
 ## License
 
-This project is licensed under the GNU General Public License v2.0. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the BSD-3-Clause. See the [LICENSE](LICENSE) file for details.
 
-Some components may be licensed under BSD-3-Clause-Clear. See individual file headers for specific licensing information.
+Some components may be licensed under GPL-2.0 WITH Linux-syscall-note. See individual file headers for specific licensing information.
 
 
 ## Related Projects

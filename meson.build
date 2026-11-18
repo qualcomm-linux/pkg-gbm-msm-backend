@@ -17,8 +17,8 @@ ext_includes = include_directories('external')
 gbm = dependency('gbm', version : ['>=21.2'])
 dep_libxml2 = dependency('libxml-2.0')
 
-arch = run_command('dpkg-architecture', '-qDEB_HOST_MULTIARCH').stdout().strip()
-libdir = '/usr/lib' + (arch != '' ? '/' + arch : '')
+gbmbackendspath = gbm.get_variable('gbmbackendspath')
+sysconfdir = get_option('sysconfdir')
 
-c_args = ['-DLIBDIR="' + libdir + '"']
+c_args = ['-DSYSCONFDIR="' + sysconfdir + '"']
 subdir('src')
