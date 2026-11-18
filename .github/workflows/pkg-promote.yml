@@ -20,8 +20,73 @@ permissions:
   pull-requests: write
 
 jobs:
+  # The reusable promote workflow fast-forwards upstream/latest to the upstream tag
+  # (git merge --ff-only). Bot-synced commits that touch only .github/ on
+  # upstream/latest make that impossible, so reconcile them here first.
+  # .github/ always comes from this package repo, never from the upstream tag.
+  reconcile-upstream-latest:
+    name: Reconcile upstream/latest
+    runs-on: ubuntu-latest
+    env:
+      UPSTREAM_TAG: ${{inputs.upstream-tag}}
+      UPSTREAM_REPO: ${{vars.UPSTREAM_REPO_GITHUB_NAME}}
+      PAT: ${{secrets.DEB_PKG_BOT_CI_TOKEN}}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{secrets.DEB_PKG_BOT_CI_TOKEN}}
+          fetch-depth: 0
+
+      - name: Merge upstream tag into upstream/latest, keeping .github from this repo
+        run: |
+          set -euo pipefail
+
+          git config user.name  "${{vars.DEB_PKG_BOT_CI_NAME}}"
+          git config user.email "${{vars.DEB_PKG_BOT_CI_EMAIL}}"
+
+          # Nothing to reconcile on a first promotion, the reusable workflow creates the branch
+          git ls-remote --exit-code --heads origin upstream/latest >/dev/null || exit 0
+
+          git fetch "https://x-access-token:${PAT}@github.com/${UPSTREAM_REPO}.git" \
+            "refs/tags/${UPSTREAM_TAG}:refs/tags/${UPSTREAM_TAG}"
+
+          git checkout -B upstream/latest origin/upstream/latest
+
+          if git merge --ff-only "${UPSTREAM_TAG}"; then
+            echo "upstream/latest fast-forwards to ${UPSTREAM_TAG}, nothing to reconcile"
+            exit 0
+          fi
+
+          # Only tolerate divergence confined to .github/
+          base=$(git merge-base HEAD "${UPSTREAM_TAG}")
+          outside=$(git diff --name-only "$base" HEAD -- . ':(exclude).github')
+          if [ -n "$outside" ]; then
+            echo "❌ upstream/latest diverged from ${UPSTREAM_TAG} outside .github/:"
+            echo "$outside"
+            exit 1
+          fi
+
+          git merge --no-commit --no-ff "${UPSTREAM_TAG}" || true
+
+          # .github/ always comes from this package repo: drop whatever the tag brought in
+          git rm -rfq --cached .github 2>/dev/null || true
+          rm -rf .github
+          git checkout HEAD -- .github
+          git add -A .github
+
+          if [ -n "$(git diff --name-only --diff-filter=U)" ]; then
+            echo "❌ Unresolved conflicts outside .github/:"
+            git diff --name-only --diff-filter=U
+            git merge --abort
+            exit 1
+          fi
+
+          git commit -s -m "Merge ${UPSTREAM_TAG} into upstream/latest, keeping .github from the package repo"
+          git push origin upstream/latest
+
   promote:
     name: Promote
+    needs: reconcile-upstream-latest
 
     uses: qualcomm-linux/qli-ci/.github/workflows/pkg-promote-reusable-workflow.yml@main
     with:
