@@ -1,12 +1,12 @@
 gbm-msm-backend (1.2.10-0qli1~) UNRELEASED; urgency=medium
 
-  [ Debusine Action Bot ]
-  * Unreleased changes
-
-  [ GitHub Service Bot ]
+  [ Abhijith Desai ]
   * New upstream release
+    - Relicense from BSD-3-Clause-Clear to BSD-3-Clause.
+    - Install msm-kms_gbm.so compatibility symlink pointing to msm_gbm.so.
+  * d/copyright: update license to BSD-3-Clause, matching upstream.
 
- -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Wed, 18 Nov 2026 07:27:02 +0000
+ -- Abhijith Desai <abdesai@qti.qualcomm.com>  Wed, 18 Nov 2026 07:27:02 +0000
 
 gbm-msm-backend (1.2.6-0qli1) forky; urgency=medium
 
