@@ -8,8 +8,9 @@ gbm-msm-backend (1.2.11-0qli1~) UNRELEASED; urgency=medium
       the default_fmt_alignment.xml config under sysconfdir/gbm.
     - Install the gbm_msm.h header.
   * d/copyright: update license to BSD-3-Clause, matching upstream.
-  * d/libgbm-msm1.install: drop, the library and config are installed by the
-    upstream Meson rules.
+  * d/libgbm-msm1.install: install the backend library and the
+    default_fmt_alignment.xml config from debian/tmp, where the upstream Meson
+    rules put them.
   * Add libgbm-msm-dev package shipping the gbm_msm.h header installed by the
     upstream Meson rules.
 
