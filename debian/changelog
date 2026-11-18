@@ -1,12 +1,14 @@
 gbm-msm-backend (1.2.11-0qli1~) UNRELEASED; urgency=medium
 
-  [ Debusine Action Bot ]
-  * Unreleased changes
-
-  [ GitHub Service Bot ]
+  [ Abhijith Desai ]
   * New upstream release
+    - Relicense from BSD-3-Clause-Clear to BSD-3-Clause.
+    - Install msm-kms_gbm.so compatibility symlink pointing to msm_gbm.so.
+    - Install the backend into the gbmbackendspath provided by gbm.pc and
+      the default_fmt_alignment.xml config under sysconfdir/gbm.
+    - Install the gbm_msm.h header.
 
- -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Wed, 18 Nov 2026 13:19:16 +0000
+ -- Abhijith Desai <abdesai@qti.qualcomm.com>  Wed, 18 Nov 2026 13:30:00 +0000
 
 gbm-msm-backend (1.2.6-0qli1) forky; urgency=medium
 
