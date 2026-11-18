@@ -10,6 +10,8 @@ gbm-msm-backend (1.2.11-0qli1~) UNRELEASED; urgency=medium
   * d/copyright: update license to BSD-3-Clause, matching upstream.
   * d/libgbm-msm1.install: drop, the library and config are installed by the
     upstream Meson rules.
+  * Add libgbm-msm-dev package shipping the gbm_msm.h header installed by the
+    upstream Meson rules.
 
  -- Abhijith Desai <abdesai@qti.qualcomm.com>  Wed, 18 Nov 2026 13:30:00 +0000
 
