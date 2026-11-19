@@ -25,3 +25,14 @@ Pre-Depends:
 Description: MSM backend for libgbm
  This package provides the MSM backend library which enables GBM buffer
  management support when using Qualcomm graphics driver.
+
+Package: libgbm-msm-dev
+Section: libdevel
+Architecture: arm64
+Depends:
+ libgbm-msm1 (= ${binary:Version}),
+ ${misc:Depends},
+Description: MSM backend for libgbm -- development files
+ This package provides the gbm_msm.h header for building against the MSM
+ backend library which enables GBM buffer management support when using
+ Qualcomm graphics driver.

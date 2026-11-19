@@ -1,1 +1,2 @@
-src/default_fmt_alignment.xml usr/lib/${DEB_HOST_MULTIARCH}/gbm/
+etc/gbm/default_fmt_alignment.xml
+usr/lib/*/gbm/*.so
