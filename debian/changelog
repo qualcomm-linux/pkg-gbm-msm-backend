@@ -1,3 +1,21 @@
+libgbm-msm (1.2.11-0qli1~) UNRELEASED; urgency=medium
+
+  [ Abhijith Desai ]
+  * New upstream release
+    - Relicense from BSD-3-Clause-Clear to BSD-3-Clause.
+    - Install msm-kms_gbm.so compatibility symlink pointing to msm_gbm.so.
+    - Install the backend into the gbmbackendspath provided by gbm.pc and
+      the default_fmt_alignment.xml config under sysconfdir/gbm.
+    - Install the gbm_msm.h header.
+  * d/copyright: update license to BSD-3-Clause, matching upstream.
+  * d/libgbm-msm.install, d/libgbm-msm-dev.install: install the library,
+    config and header from debian/tmp, where the upstream Meson rules put
+    them.
+  * d/control: make libgbm-msm-dev depend on libgbm-msm (= ${binary:Version})
+    and give it its own description.
+
+ -- Abhijith Desai <abdesai@qti.qualcomm.com>  Thu, 19 Nov 2026 10:00:00 +0000
+
 libgbm-msm (1.2.6-2) resolute; urgency=medium
 
   * Convert GBM backend build to unversioned shared module
