@@ -1,1 +1,2 @@
 0001-meson.build-bump-meson_version-to-0.61.patch
+0002-meson.build-use-meson-warning_level-and-werror.patch
