@@ -30,6 +30,7 @@ Package: libgbm-msm-dev
 Section: libdevel
 Architecture: arm64
 Depends:
+ libgbm-dev (>= 21.2),
  libgbm-msm1 (= ${binary:Version}),
  ${misc:Depends},
 Description: MSM backend for libgbm -- development files
