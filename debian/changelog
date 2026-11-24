@@ -13,8 +13,14 @@ gbm-msm-backend (1.2.11-0qli1~) UNRELEASED; urgency=medium
     rules put them.
   * Add libgbm-msm-dev package shipping the gbm_msm.h header installed by the
     upstream Meson rules.
+  * d/libgbm-msm1.install: use a wildcard instead of DEB_HOST_MULTIARCH
 
- -- Abhijith Desai <abdesai@qti.qualcomm.com>  Wed, 18 Nov 2026 13:30:00 +0000
+  [ Agathe Porte ]
+  * libgbm-msm-dev: add dep on libgbm-dev for gbm_backend_abi.h
+  * patch: bump meson_version to fix build warnings
+  * patch: use meson warning level and werror
+
+ -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Tue, 24 Nov 2026 14:18:22 +0000
 
 gbm-msm-backend (1.2.6-0qli1) forky; urgency=medium
 
