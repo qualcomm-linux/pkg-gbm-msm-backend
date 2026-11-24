@@ -1,0 +1,27 @@
+From: Agathe Porte <agathe.porte@oss.qualcomm.com>
+Date: Tue, 24 Nov 2026 13:57:02 +0000
+Subject: meson.build: bump meson_version to 0.61
+
+During the build meson warns that the specified minimum meson version
+does not match the features used during the build; bump meson_version
+to the higher required version which is 0.61.0 for install_symlink.
+
+Forwarded: https://github.com/qualcomm-linux/gbm-msm-backend/pull/30
+Signed-off-by: Agathe Porte <agathe.porte@oss.qualcomm.com>
+---
+ meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index 7c3e6b5..db7a96e 100644
+--- a/meson.build
++++ b/meson.build
+@@ -5,7 +5,7 @@ project('libgbm-msm', 'c',
+           'c_std=gnu99',
+           'warning_level=1',
+         ],
+-        meson_version : '>= 0.50'
++        meson_version : '>= 0.61'
+ )
+ 
+ cc = meson.get_compiler('c')

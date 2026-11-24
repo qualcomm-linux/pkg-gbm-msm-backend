@@ -1,3 +1,27 @@
+gbm-msm-backend (1.2.11-0qli1) forky; urgency=medium
+
+  [ Abhijith Desai ]
+  * New upstream release
+    - Relicense from BSD-3-Clause-Clear to BSD-3-Clause.
+    - Install msm-kms_gbm.so compatibility symlink pointing to msm_gbm.so.
+    - Install the backend into the gbmbackendspath provided by gbm.pc and
+      the default_fmt_alignment.xml config under sysconfdir/gbm.
+    - Install the gbm_msm.h header.
+  * d/copyright: update license to BSD-3-Clause, matching upstream.
+  * d/libgbm-msm1.install: install the backend library and the
+    default_fmt_alignment.xml config from debian/tmp, where the upstream Meson
+    rules put them.
+  * Add libgbm-msm-dev package shipping the gbm_msm.h header installed by the
+    upstream Meson rules.
+  * d/libgbm-msm1.install: use a wildcard instead of DEB_HOST_MULTIARCH
+
+  [ Agathe Porte ]
+  * libgbm-msm-dev: add dep on libgbm-dev for gbm_backend_abi.h
+  * patch: bump meson_version to fix build warnings
+  * patch: use meson warning level and werror
+
+ -- Debusine Action Bot <noreply@bot.invalid>  Tue, 24 Nov 2026 14:23:04 +0000
+
 gbm-msm-backend (1.2.6-0qli1~bpo13+1) trixie; urgency=medium
 
   [ Loïc Minier ]

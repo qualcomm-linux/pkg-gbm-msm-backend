@@ -1,0 +1,39 @@
+From: Agathe Porte <agathe.porte@oss.qualcomm.com>
+Date: Tue, 24 Nov 2026 14:03:16 +0000
+Subject: meson.build: use meson warning_level and werror
+
+Replace manual definition of -Wall and -Werror flags with the
+equivalent meson built-in options.
+
+Forwarded: https://github.com/qualcomm-linux/gbm-msm-backend/pull/31
+Signed-off-by: Agathe Porte <agathe.porte@oss.qualcomm.com>
+---
+ meson.build     | 1 +
+ src/meson.build | 2 --
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index db7a96e..ea8e1ee 100644
+--- a/meson.build
++++ b/meson.build
+@@ -4,6 +4,7 @@ project('libgbm-msm', 'c',
+           'buildtype=debugoptimized',
+           'c_std=gnu99',
+           'warning_level=1',
++          'werror=true',
+         ],
+         meson_version : '>= 0.61'
+ )
+diff --git a/src/meson.build b/src/meson.build
+index f55c3ea..e7f24f0 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -4,8 +4,6 @@ else
+     libdl = []
+ endif
+ 
+-add_project_arguments('-Wall', language : 'c')
+-add_project_arguments('-Werror', language : 'c')
+ add_project_arguments('-fvisibility=hidden', language : 'c')
+ add_project_arguments('-D_GNU_SOURCE', language : 'c')
+ c_args = meson.get_compiler('c').get_supported_arguments(c_args)
