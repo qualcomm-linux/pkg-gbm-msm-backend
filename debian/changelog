@@ -1,4 +1,4 @@
-gbm-msm-backend (1.2.11-0qli1~) UNRELEASED; urgency=medium
+gbm-msm-backend (1.2.11-0qli1) forky; urgency=medium
 
   [ Abhijith Desai ]
   * New upstream release
@@ -20,7 +20,7 @@ gbm-msm-backend (1.2.11-0qli1~) UNRELEASED; urgency=medium
   * patch: bump meson_version to fix build warnings
   * patch: use meson warning level and werror
 
- -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Tue, 24 Nov 2026 14:18:22 +0000
+ -- Debusine Action Bot <noreply@bot.invalid>  Tue, 24 Nov 2026 14:23:04 +0000
 
 gbm-msm-backend (1.2.6-0qli1) forky; urgency=medium
 
